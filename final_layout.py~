@@ -1,0 +1,27 @@
+import sys
+from PyQt4 import QtGui, QtCore, uic
+
+
+form_class = uic.loadUiType("result_layout.ui")[0]
+
+class MyFinalWindowClass(QtGui.QMainWindow, form_class):
+	def __init__(self, parent=None):
+		
+		QtGui.QMainWindow.__init__(self, parent)
+		self.setupUi(self)
+		
+		self.bok.clicked.connect(self.bok_clicked)
+		
+	def bok_clicked(self):
+		from super_ttt import MyWindowClass
+		self.FT = MyWindowClass()
+		self.FT.b1.setEnabled(True)
+		self.FT.b2.setEnabled(True)
+		self.FT.b3.setEnabled(True)
+		self.FT.b4.setEnabled(True)
+		self.FT.b5.setEnabled(True)
+		self.FT.b6.setEnabled(True)
+		self.FT.b7.setEnabled(True)
+		self.FT.b8.setEnabled(True)
+		self.FT.b9.setEnabled(True)
+		self.close()
